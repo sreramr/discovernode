@@ -1,0 +1,10 @@
+- name: Debug Python environment
+  hosts: localhost
+  tasks:
+    - name: Check Python path and installed packages
+      command: /usr/bin/python3.10 -c "import sys; import orionsdk; print(sys.path); print(orionsdk.__version__)"
+      register: debug_output
+
+    - name: Print debug output
+      debug:
+        var: debug_output.stdout_lines
