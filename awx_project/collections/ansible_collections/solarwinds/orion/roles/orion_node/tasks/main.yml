@@ -5,7 +5,7 @@
   pip:
     name: orionsdk
     state: present
-    executable: /usr/bin/pip3.10
+    executable: /usr/bin/pip3
 
 - name: Create node
   solarwinds.orion.orion_node:
