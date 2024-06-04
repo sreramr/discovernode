@@ -1,6 +1,12 @@
 ---
 # tasks file for orion_node
 
+- name: Ensure sudo is installed
+  apt:
+    name: sudo
+    state: present
+  become: true
+
 - name: Ensure Python 3.10 is installed
   apt:
     name: python3.10
