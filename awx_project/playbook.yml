@@ -1,6 +1,6 @@
 ---
 - name: Add Linux host as node to Solarwinds
-  hosts: All
+  hosts: all
   gather_facts: true # if you don't want to use ansible facts, make sure to then override default caption and IP variables
 
   vars: # Be sure to check out the role README for a full list of variables
