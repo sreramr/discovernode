@@ -2,20 +2,20 @@
 # tasks file for orion_node
 
 - name: Ensure Python 3.10 is installed
-      apt:
-        name: python3.10
-        state: present
-      become: true
+  apt:
+    name: python3.10
+    state: present
+  become: true
 
 - name: Ensure pip is installed
-      get_url:
-        url: https://bootstrap.pypa.io/get-pip.py
-        dest: /tmp/get-pip.py
-      become: true     
+  get_url:
+    url: https://bootstrap.pypa.io/get-pip.py
+    dest: /tmp/get-pip.py
+  become: true
 
 - name: Install pip
-      command: python3 /tmp/get-pip.py
-      become: true
+  command: python3 /tmp/get-pip.py
+  become: true
 
 - name: Ensure the required Python packages are installed
   pip:
