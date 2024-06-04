@@ -1,6 +1,6 @@
 ---
 - name: Ping Test Playbook
-  hosts: cisco_routers
+  hosts: Routers
   gather_facts: no
   tasks:
     - name: Get facts from Cisco IOS devices
