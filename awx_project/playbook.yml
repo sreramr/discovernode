@@ -18,7 +18,7 @@
     orion_node_snmp_version: 2
     orion_node_ro_community_string: public
     orion_node_discover_interfaces: true
-    ansible_python_interpreter: /usr/bin/python3  # Update this to the correct path of Python on your system
+    ansible_python_interpreter: /usr/bin/python3.10  # Update this to the correct path of Python on your system
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
         enabled: true
