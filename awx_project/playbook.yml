@@ -5,7 +5,7 @@
     - solarwinds.orion
   gather_facts: true # if you don't want to use ansible facts, make sure to then override default caption and IP variables
 
-  vars: # Be sure to check out the role README for a full list of variables
+  vars:
     solarwinds_server: 192.168.39.128
     solarwinds_username: admin
     solarwinds_password: 
@@ -18,19 +18,7 @@
     orion_node_snmp_version: 2
     orion_node_ro_community_string: public
     orion_node_discover_interfaces: true
-    ansible_python_interpreter: /usr/bin/python3.10
-   # orion_node_volumes:
-     # - /
-     # - /home
-     # - /var/log
-    # These are the basic pollers for a Linux node
-    # If you have other pollers enabled, such as Topology Layer 3, you can find a list by adding a node manually,
-    # then run the following query against the orion database:
-
-    # SELECT n.Caption, p.PollerType, p.Enabled
-    # from Orion.Nodes n
-    # left join Orion.Pollers as p on p.NetObjectID = n.NodeId
-    # where n.Caption = 'your_node_caption_here'
+    ansible_python_interpreter: /usr/bin/python3  # Update this to the correct path of Python on your system
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
         enabled: true
@@ -38,19 +26,6 @@
         enabled: true
       - name: N.Memory.SNMP.NetSnmpReal
         enabled: true
-
-    # The same can be done for custom pollers, if you have any.
-    # This query can get a list of Custom Pollers assigned to a node:
-
-    # SELECT n.Caption, c.CustomPollerName
-    # from Orion.Nodes n
-    # left join Orion.NPM.CustomPollerAssignment as c on c.NodeID = n.NodeID
-    # where n.Caption = 'your_node_caption_here'
-
-    # You can also get a full list of custom pollers available with this query:
-    # SELECT GroupName, UniqueName
-    # FROM Orion.NPM.CustomPollers
-    # Order By GroupName
 
   roles:
      - { role: solarwinds.orion.orion_node }
