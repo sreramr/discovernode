@@ -8,6 +8,9 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
+import sys
+sys.path.append('/home/sreram/.local/lib/python3.10/site-packages')
+
 DOCUMENTATION = '''
 ---
 module: orion_node
@@ -240,9 +243,12 @@ from ansible_collections.solarwinds.orion.plugins.module_utils.orion import Orio
 try:
     from orionsdk import SwisClient
     HAS_ORION = True
-except ImportError:
+except ImportError as e:
+    print("ImportError:", e)
+    print("Python sys.path:", sys.path)
     HAS_ORION = False
-except Exception:
+except Exception as e:
+    print("Exception:", e)
     raise Exception
 
 requests.packages.urllib3.disable_warnings()
