@@ -1,0 +1,34 @@
+{
+ "collection_info": {
+  "namespace": "solarwinds",
+  "name": "orion",
+  "version": "1.3.2",
+  "authors": [
+   "Josh Eisenbath (@jeisenbath)"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "monitoring",
+   "solarwinds",
+   "orion"
+  ],
+  "description": "Modules for Solarwinds Orion",
+  "license": [
+   "GPL-3.0-or-later"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/jeisenbath/ansible-collection-solarwinds-orion",
+  "documentation": null,
+  "homepage": "https://github.com/jeisenbath/ansible-collection-solarwinds-orion",
+  "issues": "https://github.com/jeisenbath/ansible-collection-solarwinds-orion"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "22103da84b966f3cda10d50608699bff90266c364089b2eaa0336436b927d218",
+  "format": 1
+ },
+ "format": 1
+}

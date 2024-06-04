@@ -1,0 +1,5 @@
+---
+collections:
+  - name: solarwinds.orion
+    type: git
+    source: https://github.com/jeisenbath/ansible-collection-solarwinds-orion

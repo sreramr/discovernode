@@ -1,0 +1,327 @@
+{
+ "files": [
+  {
+   "name": ".",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "requirements.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d98b2546609a7412e617506efecaa5bf9fef479f41bba919c8a353532c4fd37f",
+   "format": 1
+  },
+  {
+   "name": "changelogs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "changelogs/changelog.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d2eb4198746a6a091a0f953626ee22ef0a21953b43c4b8062376c7da77f87365",
+   "format": 1
+  },
+  {
+   "name": "changelogs/.plugin-cache.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c1aeb736dedd576c581aa107c572e70213cf6c2f56c4c56f5f46c56374a5ca52",
+   "format": 1
+  },
+  {
+   "name": "changelogs/config.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f6b9f1288dbf49651c9897f87198e6b0dfc74ec38400898b5f1dddb6bd8fd92c",
+   "format": 1
+  },
+  {
+   "name": "CHANGELOG.rst",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b23c7fb7cc2c76ea533d1dd11cf9a2e282d22fa6491efd8fc018d103fcb33fea",
+   "format": 1
+  },
+  {
+   "name": "meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3b62dd8adb2870f06989fcfef25c575fd9c042a6a2cf6dfb944c380f4ba1f061",
+   "format": 1
+  },
+  {
+   "name": "plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_update_node.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0aad7276e9f23a1c26c088af1e6ca9ba2a89724de1ed543e75b0ccf2382635b0",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_query.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8a1b85e9ed9f394f398622c72de8cd18d803f973f0134175b7acd3670b09ae63",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_volume.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ffa673406f9a2ddc781e3bc5e7a6e827b702238eaf68294795db97f350dfd336",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_volume_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e30ec4f5c8c1e8fbfabc28ad3cc860dcb4dcfda2d0c1f9e949e426eb5df12c19",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ef9f31cd2be3a4db968f100d01f03ea984755f5cfa1c6b6fd6bb2a5e99ecdc81",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node_interface.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "738df13651f8ffbd6e56532cc8ba2116e44787258db60c72b8b59afaa2ed702d",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node_application.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c98f2a79981f2875c1439f5f31c6141e4739e3c6d724329f01eaa367c6d1926c",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_custom_property.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f4b4af42730f8298e4c1688d1fb713274f586ba9c6092988efe3f5afa2d4dab2",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9ae5db082e2977191a42d99776782699a142adea40f611e8b7cd962fbaa033e7",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node_poller_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "60e1b1e9b0a71140a3de9a27139beb9e2bf9bb57920de1a0fdc6927b52a4ae66",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node_ncm.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "036eedc24e56957bde08a1034f42319ca8d329da57bd8a1041dc1e038839accf",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node_custom_poller.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ed4193deaec57d9a7046e7f0c2676f041c2d6de4f2c17cb98ca1095a71b4d5d2",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/orion_node_poller.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "730fc0e9f7403254549b7bb017b614ce6852eb3ad1daa81612a99eef02564d4c",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/orion.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "494d45dfc28b18f7bdf2e5914028ad59d69133e7c91cf0cff11c12e42ce9d122",
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments/orion_node_options.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b7e026ce8ed2865c6e788821694a948d51baa8f29215f5120134d9237b31b57f",
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments/orion_auth_options.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ddd8399450a2ad605316c6c4d14faa82f2837454a8a3625820684749d1f5c704",
+   "format": 1
+  },
+  {
+   "name": "plugins/inventory",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/inventory/orion_nodes_inventory.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "653e639746580401edb4bc205e192a2feb8428eeb481ab10d7be0173df3ecc82",
+   "format": 1
+  },
+  {
+   "name": "playbooks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "playbooks/orion_add_node.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d1d732b9b1809a377cf46d9dfb1247990a60377ffb892efd105c43efcccdd7cc",
+   "format": 1
+  },
+  {
+   "name": ".gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "85262098d805bbfb8cd3e8019a475239c1ab5678c187368f15b9ca4b141eb734",
+   "format": 1
+  },
+  {
+   "name": "roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e7c49d025703ce6625d21b553195c097f5b43db474a11bea9d11d18b81a316ed",
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f1e28c7aa9526f2db34f98b8737cf9cf59fa00d23b10763d5eb2e2748cc97ee2",
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0eaf6e2121836265a771686e33f301925642fe940f6d260a6ddefa6a8c3f3be6",
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3bcfac557fe56e610a24f8c72c84be66d68333e3e6b9edc6f43cd218a9960aea",
+   "format": 1
+  },
+  {
+   "name": "roles/orion_node/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f26987aecad5087a3a5ac48cd375b3e8e73da9cde04cdd3900a9dad97a38c2a5",
+   "format": 1
+  },
+  {
+   "name": "README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ecc46d1e998b746c655159ad48e4495bcb1f970ea42662a692a13e79f8dee4f6",
+   "format": 1
+  }
+ ],
+ "format": 1
+}
