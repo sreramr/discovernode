@@ -11,10 +11,13 @@
 
 - name: Ensure required Python packages are installed
   pip:
-    name:
-      - orionsdk
+    name: orionsdk
     state: present
-    executable: "{{ ansible_python_interpreter_pip | default(ansible_python_interpreter ~ ' -m pip') }}"
+    executable: /usr/bin/pip3.10  # Ensure this path is correct for your environment
+  register: pip_result
+
+- debug:
+    msg: "{{ pip_result }}"
 
 - name: Create node
   solarwinds.orion.orion_node:
