@@ -1,10 +1,7 @@
 ---
 - name: Add Linux host as node to Solarwinds
   hosts: wsl
-  collections:
-    - solarwinds.orion
   gather_facts: true # if you don't want to use ansible facts, make sure to then override default caption and IP variables
-
   vars:
     solarwinds_server: 192.168.39.128
     solarwinds_username: admin
@@ -18,7 +15,6 @@
     orion_node_snmp_version: 2
     orion_node_ro_community_string: public
     orion_node_discover_interfaces: true
-    ansible_python_interpreter: /usr/bin/python3.10
     #ansible_python_interpreter: /usr/bin/python3  # Update this to the correct path of Python on your system
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
