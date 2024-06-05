@@ -3,23 +3,32 @@
   hosts: routers
   gather_facts: no
   tasks:
+    # Install cisco.ios collection from Galaxy using API token
+    - name: Install Cisco IOS collection
+      command: ansible-galaxy collection install cisco.ios --force --token e305cf0426f0fa569f6f70c1e977d176efc7a4d7
+
+    # Get facts from Cisco IOS devices
     - name: Get facts from Cisco IOS devices
       cisco.ios.ios_facts:
       register: cisco_facts
- 
+
+    # Display gathered facts
     - name: Display gathered facts
       ansible.builtin.debug:
         var: cisco_facts
- 
+
+    # Display all gathered facts
     - name: Display all gathered facts
       ansible.builtin.debug:
         var: ansible_facts
         
+    # Run show version on remote devices
     - name: Run show version on remote devices
       cisco.ios.ios_command:
         commands: show version
       register: version_output
 
+    # Display show version output
     - name: Display show version output
       ansible.builtin.debug:
-        var: version_output  
+        var: version_output
