@@ -1,10 +1,16 @@
-- name: Debug Python environment
-  hosts: all
+---
+- name: Verify orionsdk installation and execute task
+  hosts: wsl
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.10
   tasks:
-    - name: Check Python path and installed packages
-      command: /usr/bin/python3.10 -c "import sys; import orionsdk; print(sys.path); print(orionsdk.__version__)"
-      register: debug_output
+    - name: Ensure orionsdk is installed
+      command: /usr/bin/python3.10 -m pip show orionsdk
+      register: orionsdk_check
+      ignore_errors: yes
 
-    - name: Print debug output
-      debug:
-        var: debug_output.stdout_lines
+    - name: Install orionsdk if not present
+      pip:
+        name: orionsdk
+        state: present
+      when: orionsdk_check.rc != 0
