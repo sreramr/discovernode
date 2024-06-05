@@ -13,7 +13,7 @@
   pip:
     name: orionsdk
     state: present
-    executable: /usr/bin/pip3.10  # Ensure this path is correct for your environment
+    executable: "{{ ansible_python_interpreter | replace('python', 'pip') }}"
   register: pip_result
 
 - debug:
@@ -41,6 +41,8 @@
     snmp_port: "{{ orion_node_snmp_port | default(omit) }}"
     snmp_allow_64: "{{ orion_node_snmp_allow_64 | default(omit) }}"
   delegate_to: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.10
 
 - name: Add SNMP pollers to node if polling method is SNMP
   when: orion_node_polling_method == 'SNMP'
