@@ -4,13 +4,14 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3.10
   tasks:
-    - name: Ensure orionsdk is installed
-      command: /usr/bin/python3.10 -m pip show orionsdk
-      register: orionsdk_check
-      ignore_errors: yes
+    - name: Show Python version
+      command: "{{ ansible_python_interpreter }} --version"
+      register: python_version
+    - debug:
+        var: python_version
 
-    - name: Install orionsdk if not present
-      pip:
-        name: orionsdk
-        state: present
-      when: orionsdk_check.rc != 0
+    - name: Show installed packages
+      command: "{{ ansible_python_interpreter }} -m pip list"
+      register: pip_list
+    - debug:
+        var: pip_list
