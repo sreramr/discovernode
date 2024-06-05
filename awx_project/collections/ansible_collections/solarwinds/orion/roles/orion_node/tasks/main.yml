@@ -11,7 +11,7 @@
 
 - name: Ensure required Python packages are installed
   pip:
-    name: orionsdk
+    name: orionsdk==0.3.0
     state: present
     executable: "{{ ansible_python_interpreter | replace('python', 'pip') }}"
   register: pip_result
