@@ -1,6 +1,6 @@
 ---
 - name: Ping Test Playbook
-  hosts: routers
+  hosts: "{{ router_ip }}"
   gather_facts: no
   tasks:
 
