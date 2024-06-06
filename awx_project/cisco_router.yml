@@ -3,9 +3,6 @@
   hosts: routers
   gather_facts: no
   tasks:
-    # Install cisco.ios collection from Galaxy using API token
-    - name: Install Cisco IOS collection
-      command: ansible-galaxy collection install cisco.ios --force --token e305cf0426f0fa569f6f70c1e977d176efc7a4d7
 
     # Get facts from Cisco IOS devices
     - name: Get facts from Cisco IOS devices
