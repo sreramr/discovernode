@@ -8,46 +8,38 @@
         new_hosts:
           - hostname: 192.168.10.3
             group: routers
-            ansible_user: sreram
-            ansible_ssh_pass: "Saibaba@007"
 
     - name: Add new hosts to inventory
       add_host:
         name: "{{ item.hostname }}"
         groups: "{{ item.group }}"
-        ansible_user: "{{ item.ansible_user }}"
-        ansible_ssh_pass: "{{ item.ansible_ssh_pass }}"
       loop: "{{ new_hosts }}"
 
-- name: Perform tasks on new_host_1 in new_group
+- name: Perform tasks on routers
   hosts: routers
   gather_facts: no
+  vars:
+    ansible_user: "sreram"
+    ansible_ssh_pass: "Saibaba@007"
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_network_os: cisco.ios.ios
   tasks:
     - name: Ensure the target hosts are reachable
-      ping:      
+      ping:
 
-    # Get facts from Cisco IOS devices
     - name: Get facts from Cisco IOS devices
       cisco.ios.ios_facts:
       register: cisco_facts
 
-    # Display gathered facts
     - name: Display gathered facts
       ansible.builtin.debug:
         var: cisco_facts
 
-    # Display all gathered facts
-    - name: Display all gathered facts
-      ansible.builtin.debug:
-        var: ansible_facts
-        
-    # Run show version on remote devices
     - name: Run show version on remote devices
       cisco.ios.ios_command:
         commands: show version
       register: version_output
 
-    # Display show version output
     - name: Display show version output
       ansible.builtin.debug:
         var: version_output
