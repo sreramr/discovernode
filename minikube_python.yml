@@ -22,12 +22,6 @@
     - debug:
         var: pip_list
 
-    - name: Check if pip3 exists
-      stat:
-        path: /usr/bin/pip3
-      register: pip3_check
-
     - name: Install orionsdk python package on version 0.3.0
       ansible.builtin.pip:
         name: orionsdk==0.3.0
-        executable: /usr/bin/pip3
