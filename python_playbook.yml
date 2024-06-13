@@ -1,6 +1,6 @@
 ---
 - name: Verify orionsdk installation and execute task
-  hosts: wsl
+  hosts: localhost
   vars:
     ansible_python_interpreter: /usr/bin/python3.10
   tasks:
