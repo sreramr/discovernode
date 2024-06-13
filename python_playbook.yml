@@ -1,45 +1,17 @@
 - name: Ensure sudo and python3.10 are installed
   hosts: localhost
   #vars:
-    #ansible_python_interpreter: /usr/bin/python3.10
+    #ansible_python_interpreter: /usr/bin/python3
   tasks:
     - name: Check if sudo exists
       stat:
         path: /usr/bin/sudo
       register: sudo_check
 
-    - name: Install sudo (Debian-based)
-      apt:
-        name: sudo
-        state: present
-      when: not sudo_check.stat.exists and (ansible_distribution == "Ubuntu" or ansible_distribution == "Debian")
-      become: yes
-
-    - name: Install sudo (RedHat-based)
-      yum:
-        name: sudo
-        state: present
-      when: not sudo_check.stat.exists and (ansible_distribution == "RedHat" or ansible_distribution == "CentOS" or ansible_distribution == "Fedora")
-      become: yes
-
     - name: Check if python3.10 exists
       stat:
-        path: /usr/bin/python3.10
+        path: /usr/bin/python3
       register: python_check
-
-    - name: Install Python 3.10 (Debian-based)
-      apt:
-        name: python3.10
-        state: present
-      when: not python_check.stat.exists and (ansible_distribution == "Ubuntu" or ansible_distribution == "Debian")
-      become: yes
-
-    - name: Install Python 3.10 (RedHat-based)
-      dnf:
-        name: python3.10
-        state: present
-      when: not python_check.stat.exists and (ansible_distribution == "RedHat" or ansible_distribution == "CentOS" or ansible_distribution == "Fedora")
-      become: yes
 
     - name: Show Python version
       command: "{{ ansible_python_interpreter }} --version"
