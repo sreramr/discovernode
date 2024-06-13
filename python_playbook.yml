@@ -37,6 +37,7 @@
         name: python3-pip
         state: present
       when: not pip3_check.stat.exists
+      become: yes  # Escalate privileges to install packages
 
     - name: Install orionsdk==0.3.0 using pip3
       pip:
@@ -48,3 +49,4 @@
       pip:
         name: orionsdk==0.3.0
       when: not pip3_check.stat.exists
+      become: yes  # Escalate privileges to ensure correct installation
