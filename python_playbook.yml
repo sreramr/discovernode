@@ -10,7 +10,7 @@
 
     - name: Check if python3.10 exists
       stat:
-        path: /usr/bin/python3
+        path: /usr/bin/python3.10
       register: python_check
 
     - name: Show Python version
