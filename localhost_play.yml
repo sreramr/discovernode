@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: false # if you don't want to use ansible facts, make sure to then override default caption and IP variables
   vars:
-    #ansible_python_interpreter: /usr/bin/python3.10
+    ansible_python_interpreter: /usr/bin/python3
     solarwinds_server: 192.168.39.128
     solarwinds_username: admin
     solarwinds_password: 
