@@ -1,17 +1,32 @@
----
 - name: Verify orionsdk installation and execute task
   hosts: localhost
   vars:
     ansible_python_interpreter: /usr/bin/python3.10
   tasks:
+    - name: Install Python 3.10
+      become: yes
+      apt:
+        name: python3.10
+        state: present
+      when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+    - name: Install Python 3.10
+      become: yes
+      dnf:
+        name: python3.10
+        state: present
+      when: ansible_distribution == "RedHat" or ansible_distribution == "CentOS" or ansible_distribution == "Fedora"
+
     - name: Show Python version
       command: "{{ ansible_python_interpreter }} --version"
       register: python_version
+
     - debug:
         var: python_version
 
     - name: Show installed packages
       command: "{{ ansible_python_interpreter }} -m pip list"
       register: pip_list
+
     - debug:
         var: pip_list
