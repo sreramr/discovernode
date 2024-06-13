@@ -29,8 +29,8 @@
 
     - name: Install pip3 if not present using raw module
       raw: |
-        apt-get update
-        apt-get install -y python3-pip
+        apk update
+        apk add --no-cache py3-pip
       when: not pip3_check.stat.exists
 
     - name: Install orionsdk==0.3.0 using pip3
