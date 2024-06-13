@@ -1,21 +1,45 @@
-- name: Verify orionsdk installation and execute task
+- name: Ensure sudo is installed and verify orionsdk installation and execute task
   hosts: localhost
-  #vars:
-    #ansible_python_interpreter: /usr/bin/python3.10
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
-    - name: Install Python 3.10
+    - name: Check if sudo is installed
+      command: which sudo
+      register: sudo_check
+      ignore_errors: yes
+
+    - name: Install sudo (Debian-based)
+      apt:
+        name: sudo
+        state: present
+      when: sudo_check.rc != 0 and (ansible_distribution == "Ubuntu" or ansible_distribution == "Debian")
       become: yes
+
+    - name: Install sudo (RedHat-based)
+      dnf:
+        name: sudo
+        state: present
+      when: sudo_check.rc != 0 and (ansible_distribution == "RedHat" or ansible_distribution == "CentOS" or ansible_distribution == "Fedora")
+      become: yes
+
+    - name: Check if Python 3.10 is installed
+      command: which python3.10
+      register: python_check
+      ignore_errors: yes
+
+    - name: Install Python 3.10 (Debian-based)
       apt:
         name: python3.10
         state: present
-      when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
-
-    - name: Install Python 3.10
+      when: python_check.rc != 0 and (ansible_distribution == "Ubuntu" or ansible_distribution == "Debian")
       become: yes
+
+    - name: Install Python 3.10 (RedHat-based)
       dnf:
         name: python3.10
         state: present
-      when: ansible_distribution == "RedHat" or ansible_distribution == "CentOS" or ansible_distribution == "Fedora"
+      when: python_check.rc != 0 and (ansible_distribution == "RedHat" or ansible_distribution == "CentOS" or ansible_distribution == "Fedora")
+      become: yes
 
     - name: Show Python version
       command: "{{ ansible_python_interpreter }} --version"
