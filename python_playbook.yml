@@ -26,27 +26,3 @@
 
     - debug:
         var: pip_list
-
-    - name: Check if pip3 exists
-      stat:
-        path: /usr/bin/pip3
-      register: pip3_check
-
-    - name: Install pip3 if not present
-      package:
-        name: python3-pip
-        state: present
-      when: not pip3_check.stat.exists
-      become: yes  # Escalate privileges to install packages
-
-    - name: Install orionsdk==0.3.0 using pip3
-      pip:
-        name: orionsdk==0.3.0
-        executable: "/usr/bin/pip3"
-      when: pip3_check.stat.exists
-
-    - name: Install orionsdk==0.3.0 using pip module if pip3 was just installed
-      pip:
-        name: orionsdk==0.3.0
-      when: not pip3_check.stat.exists
-      become: yes  # Escalate privileges to ensure correct installation
