@@ -16,7 +16,7 @@
       become: yes
 
     - name: Install sudo (RedHat-based)
-      dnf:
+      yum:
         name: sudo
         state: present
       when: not sudo_check.stat.exists and (ansible_distribution == "RedHat" or ansible_distribution == "CentOS" or ansible_distribution == "Fedora")
