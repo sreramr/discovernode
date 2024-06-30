@@ -7,17 +7,17 @@
     solarwinds_server: 10.190.16.65
     solarwinds_username: TEST_AUTOMATION
     solarwinds_password: ghk4*kcd$!jf%
-    orion_node_ip_address: 192.168.10.3
-    orion_node_caption_name: Cisco 
-    orion_node_polling_method: SNMP
-    orion_node_sys_name: R1.filingin.net
-    orion_node_machine_name: Cisco 7206 VXR
-    orion_node_vendor_name: Cisco
+    orion_node_ip_address: "{{ orion_node_ip_address }}"
+    orion_node_caption_name: "{{ orion_node_caption_name }}" 
+    orion_node_polling_method: "{{ orion_node_polling_method }}"
+    orion_node_sys_name: "{{ orion_node_sys_name }}"
+    orion_node_machine_name: "{{ orion_node_machine_name }}"
+    orion_node_vendor_name: "{{ orion_node_vendor_name }}"
     orion_node_snmp_version: 3
     orion_node_snmpv3_username: bdsnmp3roadmin
     orion_node_snmpv3_auth_key: GkqS2435+QvjL3895@
     orion_node_snmpv3_auth_protocol: MD5
-    orion_node_snmpv3_priv_key: priv_key # Replace with your SNMPv3 privacy key if required
+    orion_node_snmpv3_priv_key: "{{ orion_node_snmpv3_priv_key }}" # Replace with your SNMPv3 privacy key if required
     orion_node_snmpv3_priv_protocol: DES # Replace with your desired SNMPv3 privacy protocol if required
     orion_node_discover_interfaces: true
     orion_node_snmp_pollers:
