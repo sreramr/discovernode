@@ -1,0 +1,28 @@
+---
+- name: Add Linux host as node to Solarwinds
+  hosts: localhost
+  gather_facts: false # if you don't want to use ansible facts, make sure to then override default caption and IP variables
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    solarwinds_server: 10.190.16.65
+    solarwinds_username: TEST_AUTOMATION
+    solarwinds_password: ghk4*kcd$!jf%
+    orion_node_ip_address: "{{ orion_node_ip_address }}"
+    orion_node_caption_name: "{{ orion_node_caption_name }}" 
+    orion_node_polling_method: "{{ orion_node_polling_method }}"
+    orion_node_sys_name: "{{ orion_node_sys_name }}"
+    orion_node_machine_name: "{{ orion_node_machine_name }}"
+    orion_node_vendor_name: "{{ orion_node_vendor_name }}"
+    orion_node_snmp_version: 2
+    orion_node_ro_community_string: "{{ orion_node_ro_community_string }}"
+    orion_node_discover_interfaces: true
+    orion_node_snmp_pollers:
+      - name: N.LoadAverage.SNMP.Linux
+        enabled: true
+      - name: N.Cpu.SNMP.HrProcessorLoad
+        enabled: true
+      - name: N.Memory.SNMP.NetSnmpReal
+        enabled: true
+
+  roles:
+     - { role: solarwinds.orion.orion_node }
