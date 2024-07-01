@@ -100,7 +100,3 @@
     property_name: "{{ item.name }}"
     property_value: "{{ item.value }}"
   loop: "{{ orion_node_custom_properties }}"
-    name: "{{ orion_node_caption_name }}"
-    property_name: "{{ item.name }}"
-    property_value: "{{ item.value }}"
-  loop: "{{ orion_node_custom_properties }}"
