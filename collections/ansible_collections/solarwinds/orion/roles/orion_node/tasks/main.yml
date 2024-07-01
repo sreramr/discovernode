@@ -1,6 +1,24 @@
 ---
 # tasks file for orion_node
 
+- name: Ensure Python is installed
+  command: "{{ ansible_python_interpreter }} --version"
+  register: python_version
+  changed_when: false
+
+- debug:
+    msg: "Using Python interpreter version: {{ python_version.stdout }}"
+
+- name: Ensure required Python packages are installed
+  pip:
+    name: orionsdk==0.3.0
+    state: present
+    executable: "{{ ansible_python_interpreter | replace('python', 'pip') }}"
+  register: pip_result
+
+- debug:
+    msg: "{{ pip_result }}"
+
 - name: Create node
   solarwinds.orion.orion_node:
     hostname: "{{ orion_node_solarwinds_server }}"
