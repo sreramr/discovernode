@@ -18,7 +18,7 @@
     orion_node_snmpv3_auth_key: GkqS2435+QvjL3895@
     orion_node_snmpv3_auth_protocol: MD5
     orion_node_snmpv3_priv_key: GkqS2435+QvjL3895@
-    orion_node_snmpv3_priv_protocol: DES
+    orion_node_snmpv3_priv_protocol:
     orion_node_discover_interfaces: true
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
