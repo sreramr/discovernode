@@ -17,13 +17,8 @@
     orion_node_snmpv3_username: bdsnmp3roadmin
     orion_node_snmpv3_auth_key: GkqS2435+QvjL3895@
     orion_node_snmpv3_auth_protocol: MD5
-    orion_node_snmpv3_priv_key: "{{ orion_node_snmpv3_priv_key }}" # Replace with your SNMPv3 privacy key if required
+    orion_node_snmpv3_priv_key: GkqS2435+QvjL3895@ # Replace with your SNMPv3 privacy key if required
     orion_node_snmpv3_priv_protocol: DES # Replace with your desired SNMPv3 privacy protocol if required
-    snmpv3_auth_method: MD5
-    snmpv3_auth_key_is_pwd": GkqS2435+QvjL3895@
-    snmpv3_priv_method: null
-    snmpv3_priv_key_is_pwd: GkqS2435+QvjL3895@
-    snmpv3_username: bdsnmp3roadmin
     orion_node_discover_interfaces: true
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
