@@ -22,6 +22,7 @@
     orion_node_snmpv3_credential_set: 26
     orion_node_snmp_port: 161
     orion_node_snmp_allow_64: true
+    orion_node_discover_interfaces: true
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
         enabled: true
