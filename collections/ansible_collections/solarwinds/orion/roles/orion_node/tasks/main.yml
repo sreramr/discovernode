@@ -17,9 +17,6 @@
     ro_community_string: "{{ orion_node_ro_community_string | default(omit) }}"
     rw_community_string: "{{ orion_node_rw_community_string | default(omit) }}"
     snmpv3_credential_set: "{{ orion_node_snmpv3_credential_set | default(omit) }}"
-    snmpv3_username: "{{ orion_node_snmpv3_username | default(omit) }}"
-    snmpv3_auth_key: "{{ orion_node_snmpv3_auth_key | default(omit) }}"
-    snmpv3_priv_key: "{{ orion_node_snmpv3_priv_key | default(omit) }}"
     snmp_port: "{{ orion_node_snmp_port | default(omit) }}"
     snmp_allow_64: "{{ orion_node_snmp_allow_64 | default(omit) }}"
 
