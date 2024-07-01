@@ -308,7 +308,7 @@ def add_node(module, orion):
         if module.params['snmpv3_priv_method']:
             props['SNMPV3PrivMethod'] = module.params['snmpv3_priv_method']
         else:
-            props['SNMPV3PrivMethod'] = ''
+            props['SNMPV3PrivMethod'] = 'DES56'
         if module.params['snmpv3_priv_key_is_pwd']:
             props['SNMPV3PrivKeyIsPwd'] = module.params['snmpv3_priv_key_is_pwd']
         else:
