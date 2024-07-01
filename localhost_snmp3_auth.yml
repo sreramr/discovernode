@@ -14,15 +14,12 @@
     orion_node_machine_name: Cisco C9300-48U
     orion_node_vendor_name: Cisco
     orion_node_snmp_version: 3
-    snmpv3_username: "bdsnmp3roadmin"
-    snmpv3_priv_key: "GkqS2435+QvjL3895@"
-    snmpv3_auth_key: "GkqS2435+QvjL3895@"
-    snmpv3_priv_method: "DES56"
-    snmpv3_priv_key_is_pwd: true
-    snmpv3_auth_method: "MD5"
-    snmpv3_auth_key_is_pwd: true
-    snmpv3_credential_set: null
-    wmi_credential_set: null
+    orion_node_snmpv3_username: bdsnmp3roadmin
+    orion_node_snmpv3_auth_key: GkqS2435+QvjL3895@
+    orion_node_snmpv3_auth_method: MD5
+    orion_node_snmpv3_priv_key: GkqS2435+QvjL3895@
+    orion_node_snmpv3_priv_method: DES56
+    orion_node_snmpv3_credential_set: 26
     orion_node_snmp_port: 161
     orion_node_snmp_allow_64: true
     orion_node_snmp_pollers:
