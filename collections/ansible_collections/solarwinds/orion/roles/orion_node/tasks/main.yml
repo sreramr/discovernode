@@ -9,11 +9,17 @@
 - debug:
     msg: "Using Python interpreter version: {{ python_version.stdout }}"
 
+- name: Find pip3 executable
+  command: "{{ ansible_python_interpreter }} -m pip --version"
+  register: pip_version
+  failed_when: pip_version.rc != 0
+  changed_when: false
+
 - name: Ensure required Python packages are installed
   pip:
     name: orionsdk==0.3.0
     state: present
-    executable: "{{ ansible_python_interpreter | replace('python', 'pip') }}"
+    executable: "{{ ansible_python_interpreter }}"
   register: pip_result
 
 - debug:
