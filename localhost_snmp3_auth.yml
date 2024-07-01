@@ -27,12 +27,6 @@
         enabled: true
       - name: N.Memory.SNMP.NetSnmpReal
         enabled: true
-    orion_node_snmpv3_credential_set:
-      username: bdsnmp3roadmin
-      auth_protocol: MD5
-      auth_key: GkqS2435+QvjL3895@
-      priv_protocol: DES56
-      priv_key: GkqS2435+QvjL3895@
 
   roles:
     - { role: solarwinds.orion.orion_node }
