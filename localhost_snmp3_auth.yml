@@ -31,7 +31,7 @@
       username: bdsnmp3roadmin
       auth_protocol: MD5
       auth_key: GkqS2435+QvjL3895@
-      priv_protocol: DES
+      priv_protocol:
       priv_key: GkqS2435+QvjL3895@
 
   roles:
