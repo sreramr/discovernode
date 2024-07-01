@@ -12,14 +12,21 @@
 - name: Find pip3 executable
   command: "{{ ansible_python_interpreter }} -m pip --version"
   register: pip_version
-  failed_when: pip_version.rc != 0
   changed_when: false
+
+- name: Get pip3 executable path
+  command: "{{ ansible_python_interpreter }} -m pip --version"
+  register: pip_exec_path
+  changed_when: false
+
+- set_fact:
+    pip_path: "{{ pip_exec_path.stdout | regex_search('from (.*) ') }}/pip"
 
 - name: Ensure required Python packages are installed
   pip:
     name: orionsdk==0.3.0
     state: present
-    executable: "{{ ansible_python_interpreter }}"
+    executable: "{{ pip_path }}"
   register: pip_result
 
 - debug:
