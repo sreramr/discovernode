@@ -18,7 +18,7 @@
     orion_node_snmpv3_auth_key: GkqS2435+QvjL3895@
     orion_node_snmpv3_auth_method: MD5
     orion_node_snmpv3_priv_key: GkqS2435+QvjL3895@
-    orion_node_snmpv3_priv_method: DES
+    orion_node_snmpv3_priv_method: DES56
     orion_node_snmp_port: 161
     orion_node_snmp_allow_64: true
     orion_node_snmp_pollers:
