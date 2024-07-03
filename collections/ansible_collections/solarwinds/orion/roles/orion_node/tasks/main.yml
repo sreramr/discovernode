@@ -5,6 +5,10 @@
   set_fact:
     orion_node_interfaces: "{{ orion_node_interfaces.split(',') }}"
 
+- name: print interface
+  debug:
+    var: orion_node_interfaces
+
 - name: Create node
   solarwinds.orion.orion_node:
     hostname: "{{ orion_node_solarwinds_server }}"
