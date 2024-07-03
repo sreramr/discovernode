@@ -15,7 +15,8 @@
     orion_node_vendor_name: Cisco
     orion_node_snmp_version: 2
     orion_node_ro_community_string: public
-    orion_node_discover_interfaces: true
+    orion_node_discover_interfaces: false
+    orion_node_interfaces: "FastEthernet0/0,Serial1/0"
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
         enabled: true
