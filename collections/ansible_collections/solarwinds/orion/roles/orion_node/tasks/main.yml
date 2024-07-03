@@ -63,6 +63,7 @@
     state: present
     name: "{{ orion_node_caption_name }}"
     interface: "{{ item }}"
+    regex: true
   loop: "{{ orion_node_interfaces }}"
 
 - name: Discover and add interfaces if orion_node_discover_interfaces is true
