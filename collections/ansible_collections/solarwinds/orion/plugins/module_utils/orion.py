@@ -9,6 +9,7 @@ __metaclass__ = type
 
 from dateutil.parser import parse
 import re
+from distutils.version import LooseVersion
 
 
 orion_argument_spec = dict(
