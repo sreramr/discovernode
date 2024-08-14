@@ -508,12 +508,13 @@ def main():
         'hostname': module.params['hostname'],
         'username': module.params['username'],
         'password': module.params['password'],
-        'port': module.params['port'],
         'verify': module.params['verify'],
     }
 
     global __SWIS__
     __SWIS__ = SwisClient(**options)
+
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
     try:
         __SWIS__.query('SELECT uri FROM Orion.Environment')
