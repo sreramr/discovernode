@@ -36,6 +36,8 @@ class OrionModule:
                 'hostname': module.params['hostname'],
                 'username': module.params['username'],
                 'password': module.params['password'],
+                'port': module.params['port'],
+                'verify': module.params['verify'],
             }
         else:
             self.swis_options = {
