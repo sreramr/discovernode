@@ -4,7 +4,7 @@
   gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    solarwinds_server: pwnc0429swmpe01.bdx.com
+    solarwinds_server: 10.190.16.65
     solarwinds_username: TEST_AUTOMATION
     solarwinds_password: ghk4*kcd$!jf%
     orion_node_ip_address: 10.67.143.11
