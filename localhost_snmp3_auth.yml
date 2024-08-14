@@ -20,7 +20,8 @@
     orion_node_snmpv3_priv_key: GkqS2435+QvjL3895@
     orion_node_snmpv3_priv_method: None
     orion_node_snmpv3_credential_set: 73
-    orion_node_discover_interfaces: "Ten 2/1/1,Ten 1/1/1"
+    orion_node_discover_interfaces: True
+    orion_node_interfaces: "Ten 2/1/1,Ten 1/1/1"
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
         enabled: true
