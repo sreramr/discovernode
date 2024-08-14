@@ -238,6 +238,7 @@ orion_node:
 
 from datetime import datetime, timedelta
 import requests
+import urllib3
 from ansible.module_utils.basic import AnsibleModule
 from ansible_collections.solarwinds.orion.plugins.module_utils.orion import OrionModule, orion_argument_spec
 try:
@@ -252,6 +253,9 @@ except Exception as e:
     raise Exception
 
 requests.packages.urllib3.disable_warnings()
+
+# Disable SSL warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 def add_credential_set(node, credential_set_name, credential_set_type):
