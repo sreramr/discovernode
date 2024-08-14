@@ -28,9 +28,32 @@ orion_argument_spec = dict(
 
 class OrionModule:
 
-    def __init__(self, module, swis):
+    def __init__(self, module):
         self.module = module
-        self.swis = swis
+        self.orionsdk_version = orionsdk.__version__
+        if LooseVersion(self.orionsdk_version) <= LooseVersion('0.3.0'):
+            self.swis_options = {
+                'hostname': module.params['hostname'],
+                'username': module.params['username'],
+                'password': module.params['password'],
+            }
+        else:
+            self.swis_options = {
+                'hostname': module.params['hostname'],
+                'username': module.params['username'],
+                'password': module.params['password'],
+                'port': module.params['port'],
+                'verify': module.params['verify'],
+            }
+        self.swis = SwisClient(**self.swis_options)
+
+        try:
+            self.swis.query('SELECT uri FROM Orion.Environment')
+        except Exception as AuthException:
+            self.module.fail_json(
+                msg='Failed to query Orion. '
+                    'Check Hostname, Username, and/or Password: {0}'.format(str(AuthException))
+            )
 
     def swis_query(self, query):
         results = self.swis.query(query)
