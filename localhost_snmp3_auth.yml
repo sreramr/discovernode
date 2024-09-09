@@ -10,8 +10,6 @@
     orion_node_ip_address: 10.201.2.245
     orion_node_caption_name: JPN39A-MDF1-WC1
     orion_node_polling_method: SNMP
-    orion_node_port: 17774
-    orion_node_verify: False
     orion_node_sys_name: JPN39A-MDF1-WC1
     orion_node_machine_name: C9300-48U
     orion_node_vendor_name: Cisco
