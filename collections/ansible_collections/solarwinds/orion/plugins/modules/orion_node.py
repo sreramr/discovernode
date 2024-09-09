@@ -511,7 +511,7 @@ def main():
     verify_ssl = False  # Disable SSL verification
 
     # Construct the base URL
-    base_url = f"{protocol}://{hostname}:{port}"
+    base_url = f"{protocol}://{hostname}:{port}/SolarWinds/InformationService/v3/Json"
 
     global __SWIS__
     # __SWIS__ = SwisClient(**options)
