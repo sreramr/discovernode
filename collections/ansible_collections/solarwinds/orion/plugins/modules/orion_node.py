@@ -506,10 +506,14 @@ def main():
         'hostname': module.params['hostname'],
         'username': module.params['username'],
         'password': module.params['password'],
+        'port': 17774,  # Specify the non-SSL port
+        'protocol': 'http',  # Use HTTP instead of HTTPS
+        'verify': False  # Disable SSL verification
     }
 
     global __SWIS__
-    __SWIS__ = SwisClient(**options)
+    # __SWIS__ = SwisClient(**options)
+    __SWIS__ = SwisClient(f"{options['protocol']}://{options['hostname']}:{options['port']}", options['username'], options['password'], verify=options['verify'])
 
     try:
         __SWIS__.query('SELECT uri FROM Orion.Environment')
