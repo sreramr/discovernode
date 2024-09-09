@@ -284,8 +284,6 @@ def add_node(module, orion):
         'MachineType': module.params['machine_name'],  # Add MachineType parameter
         'Vendor': module.params['vendor_name'],  # Add Vendor parameter
         'Allow64BitCounters': module.params['snmp_allow_64'],
-        'port': module.params['port'],
-        'verify': module.params['verify'],
         'External': False,
     }
 
