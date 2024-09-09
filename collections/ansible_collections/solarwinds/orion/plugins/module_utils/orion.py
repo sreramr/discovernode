@@ -9,8 +9,6 @@ __metaclass__ = type
 
 from dateutil.parser import parse
 import re
-from distutils.version import LooseVersion
-from packaging.version import LooseVersion
 from orionsdk import SwisClient
 import orionsdk
 
