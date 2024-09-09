@@ -502,14 +502,17 @@ def main():
     if not HAS_ORION:
         module.fail_json(msg='orionsdk required for this module')
 
-    # Set up the connection options
-    hostname = module.params['hostname']
-    username = module.params['username']
-    password = module.params['password']
-    #verify_ssl = False  # Disable SSL verification
+    options = {
+        'hostname': module.params['hostname'],
+        'username': module.params['username'],
+        'password': module.params['password'],
+    }
+
+    global __SWIS__
+    __SWIS__ = SwisClient(**options)
+    #__SWIS__ = SwisClient(f"{options['protocol']}://{options['hostname']}:{options['port']}", options['username'], options['password'], verify=options['verify'])
 
     try:
-        __SWIS__ = SwisClient(hostname, username, password)
         __SWIS__.query('SELECT uri FROM Orion.Environment')
     except Exception as AuthException:
         module.fail_json(

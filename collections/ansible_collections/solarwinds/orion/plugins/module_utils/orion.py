@@ -9,6 +9,7 @@ __metaclass__ = type
 
 from dateutil.parser import parse
 import re
+from distutils.version import LooseVersion
 from orionsdk import SwisClient
 import orionsdk
 
@@ -28,12 +29,23 @@ orion_argument_spec = dict(
 
 class OrionModule:
 
-    def __init__(self, module, swis_client):
+    def __init__(self, module):
         self.module = module
         self.orionsdk_version = orionsdk.__version__
-        self.swis = swis_client
+        if LooseVersion(self.orionsdk_version) <= LooseVersion('0.3.0'):
+            self.swis_options = {
+                'hostname': module.params['hostname'],
+                'username': module.params['username'],
+                'password': module.params['password'],
+            }
+        else:
+            self.swis_options = {
+                'hostname': module.params['hostname'],
+                'username': module.params['username'],
+                'password': module.params['password'],
+            }
+        self.swis = SwisClient(**self.swis_options)
 
-        # Verify the connection
         try:
             self.swis.query('SELECT uri FROM Orion.Environment')
         except Exception as AuthException:
