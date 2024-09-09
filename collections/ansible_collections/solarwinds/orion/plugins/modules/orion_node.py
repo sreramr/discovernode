@@ -513,11 +513,8 @@ def main():
     # Construct the base URL
     base_url = f"{protocol}://{hostname}:{port}/SolarWinds/InformationService/v3/Json"
 
-    global __SWIS__
-    # __SWIS__ = SwisClient(**options)
-    __SWIS__ = SwisClient(base_url, username, password, verify=verify_ssl)
-
     try:
+        __SWIS__ = SwisClient(base_url, username, password, verify_ssl=verify_ssl)
         __SWIS__.query('SELECT uri FROM Orion.Environment')
     except Exception as AuthException:
         module.fail_json(

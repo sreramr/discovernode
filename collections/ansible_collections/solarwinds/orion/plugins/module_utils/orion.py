@@ -10,6 +10,9 @@ __metaclass__ = type
 from dateutil.parser import parse
 import re
 from distutils.version import LooseVersion
+from packaging.version import LooseVersion
+from orionsdk import SwisClient
+import orionsdk
 
 
 orion_argument_spec = dict(
@@ -27,29 +30,10 @@ orion_argument_spec = dict(
 
 class OrionModule:
 
-    def __init__(self, module):
+    def __init__(self, module, swis_client):
         self.module = module
         self.orionsdk_version = orionsdk.__version__
-        self.base_url = f"http://{module.params['hostname']}:17774/SolarWinds/InformationService/v3/Json"
-        
-        # Check the Orion SDK version
-        if LooseVersion(self.orionsdk_version) <= LooseVersion('0.3.0'):
-            self.swis_options = {
-                'hostname': module.params['hostname'],
-                'username': module.params['username'],
-                'password': module.params['password'],
-                'verify_ssl': False  # Disable SSL verification
-            }
-        else:
-            self.swis_options = {
-                'hostname': module.params['hostname'],
-                'username': module.params['username'],
-                'password': module.params['password'],
-                'verify_ssl': False  # Disable SSL verification
-            }
-
-        # Initialize the SwisClient with the correct URL and credentials
-        self.swis = SwisClient(self.base_url, **self.swis_options)
+        self.swis = swis_client
 
         # Verify the connection
         try:
