@@ -10,8 +10,14 @@ __metaclass__ = type
 from dateutil.parser import parse
 import re
 from distutils.version import LooseVersion
-from orionsdk import SwisClient
-import orionsdk
+try:
+    import orionsdk
+    from orionsdk import SwisClient
+    HAS_ORION = True
+except ImportError:
+    HAS_ORION = False
+except Exception:
+    raise Exception
 
 
 orion_argument_spec = dict(
