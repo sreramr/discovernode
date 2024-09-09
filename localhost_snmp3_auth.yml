@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: false
   vars:
-    ansible_python_interpreter: /usr/bin/python3
+    ansible_python_interpreter: /usr/bin/python3.11
     solarwinds_server: 10.190.16.65
     solarwinds_username: TEST_AUTOMATION
     solarwinds_password: ghk4*kcd$!jf%
