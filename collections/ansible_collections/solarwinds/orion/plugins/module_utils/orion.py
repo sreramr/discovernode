@@ -17,8 +17,6 @@ orion_argument_spec = dict(
     username=dict(required=True, no_log=True),
     password=dict(required=True, no_log=True),
     node_id=dict(required=False),
-    port=dict(required=False, type='str', default='17774'),
-    verify=dict(required=False, type=bool, default=False),
     ip_address=dict(required=False),
     name=dict(required=False, aliases=['caption']),
     machine_name=dict(type='str'),
@@ -37,16 +35,12 @@ class OrionModule:
                 'hostname': module.params['hostname'],
                 'username': module.params['username'],
                 'password': module.params['password'],
-                'port': module.params['port'],
-                'verify': module.params['verify'],
             }
         else:
             self.swis_options = {
                 'hostname': module.params['hostname'],
                 'username': module.params['username'],
                 'password': module.params['password'],
-                'port': module.params['port'],
-                'verify': module.params['verify'],
             }
         self.swis = SwisClient(**self.swis_options)
 
