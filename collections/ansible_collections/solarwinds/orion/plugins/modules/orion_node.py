@@ -502,18 +502,20 @@ def main():
     if not HAS_ORION:
         module.fail_json(msg='orionsdk required for this module')
 
-    options = {
-        'hostname': module.params['hostname'],
-        'username': module.params['username'],
-        'password': module.params['password'],
-        'port': 17774,  # Specify the non-SSL port
-        'protocol': 'http',  # Use HTTP instead of HTTPS
-        'verify': False  # Disable SSL verification
-    }
+    # Set up the connection options
+    hostname = module.params['hostname']
+    username = module.params['username']
+    password = module.params['password']
+    port = 17774  # Specify the non-SSL port
+    protocol = 'http'  # Use HTTP instead of HTTPS
+    verify_ssl = False  # Disable SSL verification
+
+    # Construct the base URL
+    base_url = f"{protocol}://{hostname}:{port}"
 
     global __SWIS__
     # __SWIS__ = SwisClient(**options)
-    __SWIS__ = SwisClient(f"{options['protocol']}://{options['hostname']}:{options['port']}", options['username'], options['password'], verify=options['verify'])
+    __SWIS__ = SwisClient(base_url, username, password, verify=verify_ssl)
 
     try:
         __SWIS__.query('SELECT uri FROM Orion.Environment')
