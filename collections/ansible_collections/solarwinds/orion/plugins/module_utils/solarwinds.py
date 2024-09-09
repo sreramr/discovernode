@@ -18,7 +18,7 @@ class SolarWinds:
         self.logger = logger or logging.getLogger('__name__')
 
         # Create the SWIS client for use throughout the instance.
-        self.swis = SwisClient(npm_server, username, password)
+        self.swis = SwisClient(npm_server, username, password, verify_ssl = False)
 
     def does_node_exist(self, node_name):
         """ Checks to see if a SolarWinds node exists with the given name.  Calls the get_node_id method of the class
