@@ -506,15 +506,10 @@ def main():
     hostname = module.params['hostname']
     username = module.params['username']
     password = module.params['password']
-    port = 17774  # Specify the non-SSL port
-    protocol = 'http'  # Use HTTP instead of HTTPS
     #verify_ssl = False  # Disable SSL verification
 
-    # Construct the base URL
-    base_url = f"{protocol}://{hostname}:{port}/SolarWinds/InformationService/v3/Json"
-
     try:
-        __SWIS__ = SwisClient(base_url, username, password)
+        __SWIS__ = SwisClient(hostname, username, password)
         __SWIS__.query('SELECT uri FROM Orion.Environment')
     except Exception as AuthException:
         module.fail_json(
