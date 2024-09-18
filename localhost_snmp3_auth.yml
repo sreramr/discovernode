@@ -11,7 +11,7 @@
     orion_node_caption_name: NDUR1SW24410.carefusion.com
     orion_node_polling_method: SNMP
     orion_node_sys_name: NDUR1SW24410.carefusion.com
-    orion_node_machine_name: C9300-48U
+    orion_node_machine_name: Cisco Catalyst 38xx stack
     orion_node_vendor_name: Cisco
     orion_node_snmp_version: 3
     orion_node_snmpv3_username: bdsnmp3roadmin
@@ -21,7 +21,7 @@
     orion_node_snmpv3_credential_set: 73
     orion_node_snmpv3_priv_method: None
     orion_node_discover_interfaces: True
-    orion_node_interfaces: "Te1/0/25,Te2/0/25"
+    orion_node_interfaces: "Gi1/0/1,Gi1/0/2"
     orion_node_snmp_pollers:
       - name: N.LoadAverage.SNMP.Linux
         enabled: true
