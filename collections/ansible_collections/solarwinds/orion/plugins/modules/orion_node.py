@@ -9,7 +9,7 @@ from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
 import sys
-sys.path.append('/home/sreram/.local/lib/python3.10/site-packages')
+sys.path.append('/usr/local/lib/python3.8/site-packages')
 
 DOCUMENTATION = '''
 ---
