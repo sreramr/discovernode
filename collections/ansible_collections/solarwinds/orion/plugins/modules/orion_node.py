@@ -308,7 +308,7 @@ def add_node(module, orion):
         if module.params['snmpv3_priv_method']:
             props['SNMPV3PrivMethod'] = module.params['snmpv3_priv_method']
         else:
-            props['SNMPV3PrivMethod'] = 'AES128'
+            props['SNMPV3PrivMethod'] = 'None'
         if module.params['snmpv3_priv_key_is_pwd']:
             props['SNMPV3PrivKeyIsPwd'] = module.params['snmpv3_priv_key_is_pwd']
         else:
@@ -316,7 +316,7 @@ def add_node(module, orion):
         if module.params['snmpv3_auth_method']:
             props['SNMPV3AuthMethod'] = module.params['snmpv3_auth_method']
         else:
-            props['SNMPV3AuthMethod'] = 'SHA1'
+            props['SNMPV3AuthMethod'] = 'MD5'
         if module.params['snmpv3_auth_key_is_pwd']:
             props['SNMPV3AuthKeyIsPwd'] = module.params['snmpv3_auth_key_is_pwd']
         else:
