@@ -4,10 +4,10 @@
   gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3.11
-    solarwinds_server: 10.240.244.10
+    solarwinds_server: 10.190.16.65
     solarwinds_username: TEST_AUTOMATION
     solarwinds_password: ghk4*kcd$!jf%
-    orion_node_ip_address: 10.201.2.245
+    orion_node_ip_address: 10.240.244.10
     orion_node_caption_name: NDUR1SW24410.carefusion.com
     orion_node_polling_method: SNMP
     orion_node_sys_name: NDUR1SW24410.carefusion.com
