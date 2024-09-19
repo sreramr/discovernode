@@ -280,9 +280,9 @@ def add_node(module, orion):
         'RWCommunity': module.params['rw_community_string'],
         'SNMPVersion': module.params['snmp_version'],
         'AgentPort': module.params['snmp_port'],
-        #'SysName': module.params['sys_name'],
-        #'MachineType': module.params['machine_name'],
-        #'Vendor': module.params['vendor_name'],
+        'SysName': module.params['sys_name'],
+        'MachineType': module.params['machine_name'],
+        'Vendor': module.params['vendor_name'],
         'Allow64BitCounters': module.params['snmp_allow_64'],
         'External': False,
     }
