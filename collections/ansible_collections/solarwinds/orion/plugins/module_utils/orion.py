@@ -18,9 +18,9 @@ orion_argument_spec = dict(
     node_id=dict(required=False),
     ip_address=dict(required=False),
     name=dict(required=False, aliases=['caption']),
-    #machine_name=dict(type='str'),
-    #sys_name=dict(type='str'),
-    #vendor_name=dict(type='str'),
+    machine_name=dict(type='str'),
+    sys_name=dict(type='str'),
+    vendor_name=dict(type='str'),
 )
 
 
