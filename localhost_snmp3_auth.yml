@@ -31,6 +31,12 @@
         enabled: true
       - name: N.Status.ICMP.Native
         enabled: true
+      - name: N.Uptime.SNMP.Generic
+        enabled: true  # Poller for uptime
+      - name: N.Topology_Layer3.SNMP.ipNetToMedia
+        enabled: true  # Poller for topology (Layer 3)
+      - name: N.Details.SNMP.Generic
+        enabled: true
 
   roles:
     - { role: solarwinds.orion.orion_node }
