@@ -29,6 +29,8 @@
         enabled: true
       - name: N.Details.SNMP.Generic
         enabled: true
+      - name: N.LoadAverage.SNMP.Linux
+        enabled: true  
       - name: N.Uptime.SNMP.Generic
         enabled: true
       - name: N.Cpu.SNMP.HrProcessorLoad
