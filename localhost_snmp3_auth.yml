@@ -29,6 +29,8 @@
         enabled: true
       - name: N.Memory.SNMP.NetSnmpReal
         enabled: true
+      - name: N.Status.ICMP.Native
+        enabled: true
 
   roles:
     - { role: solarwinds.orion.orion_node }
