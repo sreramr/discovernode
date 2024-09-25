@@ -23,23 +23,21 @@
     orion_node_discover_interfaces: false
     orion_node_interfaces: "GigabitEthernet1/0/1,GigabitEthernet1/0/2,StackPort1"
     orion_node_snmp_pollers:
-      - name: N.Status.ICMP.Native
-        enabled: true
-      - name: N.ResponseTime.ICMP.Native
-        enabled: true
-      - name: N.Details.SNMP.Generic
-        enabled: true
       - name: N.LoadAverage.SNMP.Linux
-        enabled: true  
-      - name: N.Uptime.SNMP.Generic
         enabled: true
       - name: N.Cpu.SNMP.HrProcessorLoad
         enabled: true
       - name: N.Memory.SNMP.NetSnmpReal
         enabled: true
-      - name: N.AssetInventory.Snmp.Generic
+      - name: N.Status.ICMP.Native
+        enabled: true
+      - name: N.Uptime.SNMP.Generic
         enabled: true
       - name: N.Topology_Layer3.SNMP.ipNetToMedia
+        enabled: true
+      - name: N.Details.SNMP.Generic
+        enabled: true
+      - name: N.AssetInventory.Snmp.Generic
         enabled: true
       - name: N.Routing.SNMP.Ipv4CidrRoutingTable
         enabled: true
