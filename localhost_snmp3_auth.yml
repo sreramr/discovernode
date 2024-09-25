@@ -37,10 +37,6 @@
         enabled: true
       - name: N.Details.SNMP.Generic
         enabled: true
-      - name: N.AssetInventory.Snmp.Generic
-        enabled: true
-      - name: N.Routing.SNMP.Ipv4CidrRoutingTable
-        enabled: true
 
   roles:
     - { role: solarwinds.orion.orion_node }
