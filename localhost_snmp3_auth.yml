@@ -24,27 +24,23 @@
     orion_node_interfaces: "GigabitEthernet1/0/1,GigabitEthernet1/0/2,StackPort1"
     orion_node_snmp_pollers:
       - name: N.Status.ICMP.Native
-        enabled: true  # Poller for ICMP status
-      - name: N.Status.SNMP.Native
-        enabled: true  # Disable SNMP status poller
+        enabled: true
       - name: N.ResponseTime.ICMP.Native
-        enabled: true  # Poller for ICMP response time
-      - name: N.ResponseTime.SNMP.Native
-        enabled: true  # Disable SNMP response time poller
+        enabled: true
       - name: N.Details.SNMP.Generic
-        enabled: true  # Poller for node details
+        enabled: true
       - name: N.Uptime.SNMP.Generic
-        enabled: true  # Poller for uptime
+        enabled: true
       - name: N.Cpu.SNMP.HrProcessorLoad
-        enabled: true  # Poller for CPU load (percent load)
+        enabled: true
       - name: N.Memory.SNMP.NetSnmpReal
-        enabled: true  # Poller for memory utilization
+        enabled: true
       - name: N.AssetInventory.Snmp.Generic
-        enabled: true  # Poller for asset inventory
+        enabled: true
       - name: N.Topology_Layer3.SNMP.ipNetToMedia
-        enabled: true  # Disable Layer 3 topology poller
+        enabled: true
       - name: N.Routing.SNMP.Ipv4CidrRoutingTable
-        enabled: true  # Disable IPv4 CIDR routing table poller
+        enabled: true
 
   roles:
     - { role: solarwinds.orion.orion_node }
