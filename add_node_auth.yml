@@ -7,18 +7,18 @@
     solarwinds_server: pwnc0429swmpe01.bdx.com
     solarwinds_username: TEST_AUTOMATION
     solarwinds_password: ghk4*kcd$!jf%
-    orion_node_ip_address: 10.240.244.10
-    orion_node_caption_name: NDUR1SW24410.carefusion.com
+    orion_node_ip_address: "{{ orion_node_ip_address }}"
+    orion_node_caption_name: "{{ orion_node_caption_name }}"
     orion_node_polling_method: SNMP
-    orion_node_sys_name: NDUR1SW24410.carefusion.com
-    orion_node_machine_name: Cisco Catalyst 38xx stack
-    orion_node_vendor_name: Cisco
+    orion_node_sys_name: "{{ orion_node_caption_name }}"
+    orion_node_machine_name: "{{ orion_node_machine_name }}"
+    orion_node_vendor_name: "{{ orion_node_vendor_name }}"
     orion_node_snmp_version: 3
     orion_node_snmpv3_username: bdsnmp3roadmin
     orion_node_snmpv3_auth_key: GkqS2435+QvjL3895@
     orion_node_snmpv3_auth_method: MD5
     orion_node_snmpv3_priv_key: GkqS2435+QvjL3895@
-    orion_node_snmpv3_credential_set: 40
+    orion_node_snmpv3_credential_set: 41
     orion_node_snmpv3_priv_method: None
     orion_node_discover_interfaces: false
     orion_node_interfaces: "GigabitEthernet1/0/1,GigabitEthernet1/0/2,StackPort1"
