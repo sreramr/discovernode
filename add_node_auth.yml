@@ -18,7 +18,7 @@
     orion_node_snmpv3_auth_key: GkqS2435+QvjL3895@
     orion_node_snmpv3_auth_method: MD5
     orion_node_snmpv3_priv_key: GkqS2435+QvjL3895@
-    orion_node_snmpv3_credential_set: 47
+    orion_node_snmpv3_credential_set: 48
     orion_node_snmpv3_priv_method: None
     orion_node_discover_interfaces: false
     orion_node_interfaces: "GigabitEthernet1/0/1,GigabitEthernet1/0/2,StackPort1"
